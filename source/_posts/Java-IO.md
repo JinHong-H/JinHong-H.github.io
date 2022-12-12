@@ -1,8 +1,8 @@
 ---
 title: Java IO
 date: 2022-12-11 22:05:00
-tags: Java 基础
-categories: Java 基础
+tags: Java
+categories: Java
 ---
 
 ## 常用的 IO 类型
