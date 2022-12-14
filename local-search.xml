@@ -46,7 +46,7 @@
     <link href="/2022/12/11/Java-IO/"/>
     <url>/2022/12/11/Java-IO/</url>
     
-    <content type="html"><![CDATA[<h2 id="常用的-IO-类型"><a href="#常用的-IO-类型" class="headerlink" title="常用的 IO 类型"></a>常用的 IO 类型</h2><h2 id="常用的-IO-API"><a href="#常用的-IO-API" class="headerlink" title="常用的 IO API"></a>常用的 IO API</h2><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2>]]></content>
+    <content type="html"><![CDATA[<h2 id="File对象"><a href="#File对象" class="headerlink" title="File对象"></a>File对象</h2><p>File对象可以操作文件和目录。</p><ul><li>构造File对象，可以传入绝对路径或者相对路径。注意：File对象既可以表示文件，也可以表示目录。特别要注意的是，构造一个File对象，即使传入的文件或目录不存在，代码也不会出错，因为构造一个File对象，并不会导致任何磁盘操作。只有当我们调用File对象的某些方法的时候，才真正进行磁盘操作。</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs JAVA"><span class="hljs-type">File</span> <span class="hljs-variable">f</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">File</span>(<span class="hljs-string">&quot;绝对路径/相对路径&quot;</span>)<br></code></pre></td></tr></table></figure><ul><li>API</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs JAVA"><span class="hljs-comment">// 获取路径</span><br>getPath()，返回构造方法传入的路径，<br>getAbsolutePath()，返回绝对路径，<br>getCanonicalPath()，它和绝对路径类似，但是返回的是规范路径。<br><br><span class="hljs-comment">// 获取权限和大小</span><br><span class="hljs-type">boolean</span> <span class="hljs-title function_">canRead</span><span class="hljs-params">()</span>：是否可读；<br><span class="hljs-type">boolean</span> <span class="hljs-title function_">canWrite</span><span class="hljs-params">()</span>：是否可写；<br><span class="hljs-type">boolean</span> <span class="hljs-title function_">canExecute</span><span class="hljs-params">()</span>：是否可执行(对目录而言，是否可执行表示能否列出它包含的文件和子目录)；<br><span class="hljs-type">long</span> <span class="hljs-title function_">length</span><span class="hljs-params">()</span>：文件字节大小。<br><br><span class="hljs-comment">// 创建和删除文件</span><br>createNewFile()：创建新文件<br>delete()：删除该文件<br>createTempFile()：创建临时文件<br>deleteOnExit()：在JVM退出时自动删除该文件。<br><br><span class="hljs-comment">// 遍历文件和目录</span><br>当File对象表示一个目录时，可以使用list()和listFiles()列出目录下的文件和子目录名<br><span class="hljs-type">boolean</span> <span class="hljs-title function_">mkdir</span><span class="hljs-params">()</span>：创建当前File对象表示的目录；<br><span class="hljs-type">boolean</span> <span class="hljs-title function_">mkdirs</span><span class="hljs-params">()</span>：创建当前File对象表示的目录，并在必要时将不存在的父目录也创建出来；<br><span class="hljs-type">boolean</span> <span class="hljs-title function_">delete</span><span class="hljs-params">()</span>：删除当前File对象表示的目录，当前目录必须为空才能删除成功。<br></code></pre></td></tr></table></figure><ul><li>Java标准库还提供了一个Path对象，它位于java.nio.file包。Path对象和File对象类似，但操作更加简单：</li></ul><h2 id="InputStream"><a href="#InputStream" class="headerlink" title="InputStream"></a>InputStream</h2><h2 id="OutputStream"><a href="#OutputStream" class="headerlink" title="OutputStream"></a>OutputStream</h2>]]></content>
     
     
     <categories>
@@ -59,25 +59,6 @@
     <tags>
       
       <tag>Java</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>测试文章</title>
-    <link href="/2022/12/11/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/"/>
-    <url>/2022/12/11/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</url>
-    
-    <content type="html"><![CDATA[]]></content>
-    
-    
-    
-    <tags>
-      
-      <tag>test</tag>
       
     </tags>
     
